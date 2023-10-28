@@ -1,0 +1,7 @@
+name: CI worlflow
+on: [push]
+
+jobs:
+  test:
+    step:
+      - run: echo Hello
