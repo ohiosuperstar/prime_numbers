@@ -5,4 +5,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: python test_pipeline.py
+      - uses: actions/checkout@v2
+      - run: python3 test_pipeline.py
