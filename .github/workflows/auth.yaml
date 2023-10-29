@@ -9,5 +9,5 @@ jobs:
     steps:
       - run: mkdir -p ~/.ssh
       - run: echo $ssh_key > ~/id_rsa
-      - run: chmod ~/id_rsa
+      - run: chmod 0600 ~/id_rsa
       - run: ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org ls
