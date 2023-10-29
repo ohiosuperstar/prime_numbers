@@ -7,7 +7,11 @@ jobs:
     env:
       ssh_key: ${{ secrets.OHIOSSTARS_DIRTY_LITTLE_SECRET }}
     steps:
-      - run: mkdir -p ~/.ssh
-      - run: echo $ssh_key > ~/.ssh/id_rsa
-      - run: chmod 0600 ~/.ssh/id_rsa
-      - run: ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org  "mkdir -p ~/ohiosstar"
+      - name: set ssh key
+        run: |
+          mkdir -p ~/.ssh \
+          echo "$ssh_key" | base64 -d > ~/.ssh/id_rsa && \
+          chmod 0600 ~/.ssh/id_rsa
+      - name: connect
+        run: ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org
+      - run: echo ok
