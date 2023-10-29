@@ -7,4 +7,4 @@ jobs:
     env:
       ssh_key: ${{ secrets.ohiosstars_dirty_little_secret }}
     steps:
-      - run: ssh -o StrictHostKeyChecking=no db2c2023q4_guest_3@brain-client.bigdatateam.org ls
+      - run: ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org ls
