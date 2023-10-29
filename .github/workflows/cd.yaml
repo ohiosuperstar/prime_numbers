@@ -14,6 +14,6 @@ jobs:
           chmod 0600 ~/.ssh/id_rsa
       - name: Brain-client stuff
         run: |
-          ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org rmdir ohiosstar && \
-          mkdir ohiosstar && \
-          echo "" > task41.txt
+          ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org rmdir ohiosstar
+      - run: mkdir ohiosstar
+      - run: echo "" > task41.txt
