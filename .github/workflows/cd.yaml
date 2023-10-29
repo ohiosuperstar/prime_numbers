@@ -7,10 +7,11 @@ jobs:
     env:
       ssh_key: ${{ secrets.OHIOSSTARS_DIRTY_LITTLE_SECRET }}
     steps:
-      - name: set ssh key
+      - name: Set ssh key
         run: |
           mkdir -p ~/.ssh && \
           echo "$ssh_key" | base64 -d > ~/.ssh/id_rsa && \
           chmod 0600 ~/.ssh/id_rsa
-      - name: connect
+      - name: Brain-client stuff
         run: ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org mkdir ohiosstar
+      - run: vi task41.txt
