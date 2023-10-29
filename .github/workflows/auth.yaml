@@ -8,4 +8,4 @@ jobs:
       ssh_key: ${{ secrets.ohiosstars_dirty_little_secret }}
     steps:
       - uses: actions/checkout@v2
-      - run: echo ssh_key
+      - run: echo $ssh_key
