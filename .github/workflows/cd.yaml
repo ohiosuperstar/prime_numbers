@@ -13,4 +13,5 @@ jobs:
           echo "$ssh_key" | base64 -d > ~/.ssh/id_rsa && \
           chmod 0600 ~/.ssh/id_rsa
       - run: |
-          ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org mkdir ohiosstar && \ echo '' > ohiosstar/task41.txt
+          ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org mkdir ohiosstar
+          echo '' > ohiosstar/task41.txt
