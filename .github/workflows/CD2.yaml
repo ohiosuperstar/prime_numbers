@@ -17,4 +17,4 @@ jobs:
       - name: Run primes.py
         run: python3 ~/primes.py $seed >> "$result"
       - run: |
-          ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org "mkdir ohiosstar && echo $result > ~/ohiosstar/task42.txt"
+          ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org "mkdir -p ohiosstar && echo $result > ~/ohiosstar/task42.txt"
