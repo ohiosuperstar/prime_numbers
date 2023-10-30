@@ -14,6 +14,6 @@ jobs:
           echo "$ssh_key" | base64 -d > ~/.ssh/id_rsa && \
           chmod 0600 ~/.ssh/id_rsa
       - name: Run primes.py
-          python3 primes.py $seed >> "$result"
+        run: python3 primes.py $seed >> "$result"
       - run: |
           ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org "mkdir ohiosstar && echo $result > ~/ohiosstar/task42.txt"
