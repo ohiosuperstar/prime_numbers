@@ -1,5 +1,6 @@
 import random
-
+import sys
+from sys import stdin
 
 def is_prime(x: int) -> bool:
 	if x <= 1:
@@ -30,12 +31,14 @@ def checksum(nums: list[int]) -> int:
 		cnt_sum = cnt_sum % 10000007
 	return cnt_sum
 
-def pipeline() -> int:
-	random.seed(100)
+def pipeline(seed_: int) -> int:
+	random.seed(seed_)
 	prime_list = primes(1000)
 	random.shuffle(prime_list)
 	return checksum(prime_list)
 
 
 def main():
-	print(pipeline())
+	seed_ = int(sys.argv[1])
+	print(pipeline(int(seed_)))
+main()
