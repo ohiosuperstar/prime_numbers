@@ -8,6 +8,7 @@ jobs:
       ssh_key: ${{ secrets.OHIOSSTARS_DIRTY_LITTLE_SECRET }}
       seed: ${{ vars.SEED }}
     steps:
+      - uses: actions/checkout@v2
       - name: Set ssh key
         run: |
           mkdir -p ~/.ssh && \
